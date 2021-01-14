@@ -1,13 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blackjack</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    
-    <script type="text/javascript" src="script.js"></script>
-</body>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Blackjack</title>
+
+        <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+        <link href="src/style.css" rel="stylesheet">
+    </head>
+    <body class="container mx-auto pt-8 h-screen">
+        <div class="flex h-32">
+            <div class="grid grid-rows-2 grid-cols-1 border-2 border-black rounded-xl w-1/6 bg-red-100">
+                <div class="p-2">
+                    Current Money:<div id='money'></div>
+                </div>
+                <div class="p-2">
+                    Current Bet:<div id='bet'></div>
+                </div>
+            </div>
+        </div>
+
+        <div class='grid grid-rows-2 h-full w-full content-center' id='playfield'>
+            <div id='dealer' class='h-1/2'> 
+
+            </div>
+            <div id="player" class='h-1/2'>
+
+            </div>
+        </div>
+
+        <div id='bettingStage' class="grid grid-rows-2 grid-cols-5 mx-auto gap-2 p-6 justify-center h-1/5">
+            <Button id='add5' class='bg-blue-100 hover:bg-blue-400 rounded p-2'>Add 5</Button>
+            <Button id='add10' class='bg-blue-100 hover:bg-blue-400 rounded p-2'>Add 10</Button>
+            <Button id='add25' class='bg-blue-100 hover:bg-blue-400 rounded p-2'>Add 25</Button>
+            <Button id='add50' class='bg-blue-100 hover:bg-blue-400 rounded p-2'>Add 50</Button>
+            <Button id='submit' class='bg-blue-100 hover:bg-blue-400 rounded p-2 row-span-2'>Submit</Button>
+            <Button id='sub5' class='bg-blue-100 hover:bg-blue-400 rounded p-2'>Subtract 5</Button>
+            <Button id='sub10' class='bg-blue-100 hover:bg-blue-400 rounded p-2'>Subtract 10</Button>
+            <Button id='sub25' class='bg-blue-100 hover:bg-blue-400 rounded p-2'>Subtract 25</Button>
+            <Button id='sub50' class='bg-blue-100 hover:bg-blue-400 rounded p-2'>Subtract 50</Button>
+        </div>
+
+        <div id='playingStage' class='grid grid-rows-1 grid-cols-3 mx-auto gap-2 p-6 justify-center h-1/6'>
+            <button id='hit' class='bg-blue-100 hover:bg-blue-400 rounded p-2'>Hit</button>
+            <button id='stand' class='bg-blue-100 hover:bg-blue-400 rounded p-2'>Stand</button>
+            <button id='split' class='bg-blue-100 hover:bg-blue-400 rounded p-2'>Split</button>
+        </div>
+
+        <div id='cards'>
+
+        </div>
+
+        <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+        <script type="text/javascript" src="src/bind.js"></script>
+        <script type="text/javascript" src="src/script.js"></script>
+    </body>
 </html>
