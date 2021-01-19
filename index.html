@@ -9,26 +9,38 @@
         <link href="src/style.css" rel="stylesheet">
     </head>
     <body class="container mx-auto pt-8 h-screen">
-        <div class="flex h-32">
-            <div class="grid grid-rows-2 grid-cols-1 border-2 border-black rounded-xl w-1/6 bg-red-100">
-                <div class="p-2">
-                    Current Money:<div id='money'></div>
+        
+        <!-- Play Field -->
+        <div class='relative grid grid-rows-2 h-4/5 w-full bg-green-700 border-green rounded-xl' id='playfield'>
+            <!-- Player Stats -->
+            <div class="absolute left-0 top-0 w-36 h-12" id="score">
+                <div class="grid grid-rows-2 grid-cols-1 border-2 border-black rounded-xl bg-red-100">
+                    <div class="p-2">
+                        Current Money:<div id='money'></div>
+                    </div>
+                    <div class="p-2">
+                        Current Bet:<div id='bet'></div>
+                    </div>
                 </div>
-                <div class="p-2">
-                    Current Bet:<div id='bet'></div>
-                </div>
+            </div>
+            <svg class='absolute inset-x-0 top-2 mx-auto w-full overflow-hidden select-none' viewBox="0 0 500 250">
+                <path id='curve' fill="transparent" d="M100 -25 c0 0 150 250 300 0"/>
+                <text width="750" x='17.5%' font-size='18' fill="#989800">
+                    <textPath alignment-baseline="top" xlink:href="#curve">
+                        dealer must stand at 17
+                    </textPath>
+                </text>
+            </svg>
+            <div id='dealer' class='absolute inset-x-0 top-0 flex flex-row justify-center'>
+
+            </div>
+
+            <div id="player" class='absolute inset-x-0 bottom-0 flex flex-row justify-center'>
+
             </div>
         </div>
 
-        <div class='grid grid-rows-2 h-full w-full content-center' id='playfield'>
-            <div id='dealer' class='h-1/2'> 
-
-            </div>
-            <div id="player" class='h-1/2'>
-
-            </div>
-        </div>
-
+        <!-- Player Interaction -->
         <div id='bettingStage' class="grid grid-rows-2 grid-cols-5 mx-auto gap-2 p-6 justify-center h-1/5">
             <Button id='add5' class='bg-blue-100 hover:bg-blue-400 rounded p-2'>Add 5</Button>
             <Button id='add10' class='bg-blue-100 hover:bg-blue-400 rounded p-2'>Add 10</Button>
@@ -41,14 +53,10 @@
             <Button id='sub50' class='bg-blue-100 hover:bg-blue-400 rounded p-2'>Subtract 50</Button>
         </div>
 
-        <div id='playingStage' class='grid grid-rows-1 grid-cols-3 mx-auto gap-2 p-6 justify-center h-1/6'>
+        <div id='playingStage' class='grid grid-rows-1 grid-cols-3 mx-auto gap-2 p-6 justify-center h-1/5'>
             <button id='hit' class='bg-blue-100 hover:bg-blue-400 rounded p-2'>Hit</button>
             <button id='stand' class='bg-blue-100 hover:bg-blue-400 rounded p-2'>Stand</button>
             <button id='split' class='bg-blue-100 hover:bg-blue-400 rounded p-2'>Split</button>
-        </div>
-
-        <div id='cards'>
-
         </div>
 
         <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>

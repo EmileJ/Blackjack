@@ -1,0 +1,8 @@
+<svg viewBox="0 0 500 500">
+    <path id='curve' fill="transparent" d="M0 0 C0 0 250 350 500 0"/>
+    <text width="500" x='32%' font-size='32' fill="#989800">
+        <textPath alignment-baseline="middle" xlink:href="#curve">
+            Dealer stops at 17
+        </textPath>
+    </text>
+</svg>
